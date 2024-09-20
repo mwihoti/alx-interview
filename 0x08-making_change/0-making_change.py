@@ -15,5 +15,5 @@ def makeChange(coins, total):
     for coin in sorted(coins, reverse=True):
         for amount in range(coin, total + 1):
             if dp[amount - coin] + 1 < dp[amount]:
-                dp[amount] = dp[amount -coin] + 1
+                dp[amount] = dp[amount - coin] + 1
     return dp[total] if dp[total] != float('inf') else -1
